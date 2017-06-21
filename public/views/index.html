@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Omega Message Board</title>
@@ -7,9 +8,13 @@
     <script src="scripts/messageBoard.js" charset="utf-8"></script>
     <script src="scripts/services/messageBoardService.js" charset="utf-8"></script>
   </head>
+
   <body ng-app='myApp'>
     <h1>Omega Message Board</h1>
     <div ng-controller='MessageBoardController as mbc' ng-init='mbc.getMessages()'>
+      <button ng-click="mbc.logIn()" type="button" name="button">Log In</button>
+      <button ng-click="mbc.register()" type="button" name="button">Register</button>
+
       <div>
         <p ng-show='mbc.hasName'>
           Logged in as: {{ mbc.name }} <button ng-click='mbc.logOut()'>Log Out</button>
@@ -25,4 +30,5 @@
       </div>
     </div>
   </body>
+
 </html>
