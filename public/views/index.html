@@ -13,7 +13,12 @@
     <h1>Omega Message Board</h1>
     <div ng-controller='MessageBoardController as mbc' ng-init='mbc.getMessages()'>
       <button ng-click="mbc.logIn()" type="button" name="button">Log In</button>
-      <button ng-click="mbc.register()" type="button" name="button">Register</button>
+
+      <div>
+        <input type="text" ng-model="mbc.usernameRegister" placeholder="username">
+        <input type="password" ng-model="mbc.passwordRegister">
+        <button ng-click="mbc.register()" type="button" name="button">Register</button>
+      </div>
 
       <div>
         <p ng-show='mbc.hasName'>

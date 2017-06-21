@@ -18,7 +18,16 @@ myApp.controller('MessageBoardController', function(MessageBoardService) {
 
 	vm.register = function() {
 		console.log('in controller register');
-		MessageBoardService.sendRegister();
+		// assemble credentialsObject
+		var credentials = {
+			username: vm.usernameRegister,
+			password: vm.passwordRegister
+		};
+		MessageBoardService.sendRegister(credentials).then(function() {
+			// clear out inputs when retruned from register call
+			vm.usernameRegister = "";
+			vm.passwordRegister = "";
+		});
 	};
 
 	vm.logOut = function() {

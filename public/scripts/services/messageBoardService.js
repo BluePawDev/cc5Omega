@@ -19,7 +19,7 @@ myApp.service('MessageBoardService', function($http) {
 			username: 'Boris',
 			password: 'Karkoff'
 		}
-		$http({
+		return $http({
 			method: 'POST',
 			url: '/',
 			data: credentials
@@ -28,13 +28,10 @@ myApp.service('MessageBoardService', function($http) {
 		});
 	};
 
-	sv.sendRegister = function() {
+	sv.sendRegister = function(credentials) {
 		console.log('in service sendRegister');
-		var credentials = {
-			username: 'Natasha',
-			password: 'Fatale'
-		}
-		$http({
+		// removed temp data
+		return $http({
 			method: 'POST',
 			url: '/register',
 			data: credentials
